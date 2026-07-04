@@ -1,0 +1,118 @@
+/* Alapok */
+:root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --accent: #58a6ff;
+    --success: #238636;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+/* Oldalsáv */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    padding: 20px;
+}
+
+/* Tartalom terület */
+.main-content {
+    margin-left: 300px;
+    padding: 40px;
+    width: calc(100% - 300px);
+}
+
+.header { margin-bottom: 30px; }
+.header h1 { color: var(--accent); margin-bottom: 5px; }
+
+/* Kártyák */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* Profil specifikus elemek */
+.profile-main { text-align: center; }
+.avatar-placeholder img {
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: var(--accent);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-row span { color: #8b949e; }
+/* ... a többi CSS marad ... */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    text-align: left;
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+    padding: 10px;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+    background: rgba(88, 166, 255, 0.05);
+}
+
+.sidebar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background: #21262d;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}

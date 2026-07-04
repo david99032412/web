@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NorthSideRP – Főoldal (Előnézet)</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <!-- Külső stílusfájl -->
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Material ikonok -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Navigáció és betöltő vezérlő script -->
+  <script src="assets/script.js" defer></script>
+  <!-- Beágyazott stílusok az előnézethez (egyszerűsített) -->
+  <style>
+    :root {
+      --accent: #2b8ffb;
+      --bg: #0e0e0e;
+      --panel: #161616;
+      --text: #e2e2e2;
+      --muted: #8a8a8a;
+      --border: #1c1c1c;
+      --hover: #1b1b1b;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+    }
+    /* Fejléc */
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      border-bottom: 2px solid var(--accent);
+      padding: 14px 45px;
+      box-shadow: 0 0 10px rgba(0,0,0,.6);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+    .logo-area img {
+      height: 35px;
+      margin-right: 10px;
+    }
+    .site-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    .main-nav ul li {
+      margin-left: 20px;
+    }
+    .main-nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,.6);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .cta-btn:hover {
+      background: #1a6fd8;
+      transform: translateY(-2px);
+    }
+    /* Features */
+    .features {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .feature-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,.5);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .feature-card:hover {
+      background: var(--hover);
+      transform: translateY(-3px);
+    }
+    .feature-card .material-icons {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .feature-card h3 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 20px;
+      border-top: 1px solid #1a1a1a;
+      background: #0c0c0c;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fejléc -->
+  <header class="main-header">
+    <div class="logo-area">
+      <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+      <span class="site-title">NorthSideRP</span>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="preview.html" class="active">Főoldal</a></li>
+        <li><a href="downloads.php">Letöltések</a></li>
+        <li><a href="forum.php">Fórum</a></li>
+        <li><a href="contact.php">Kapcsolatok</a></li>
+        <li><a href="../ucp/index.php">UCP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Betöltő animáció (statikus előnézetben azonnal eltűnik) -->
+  <div id="loader" style="display:none;"></div>
+  <!-- Tartalom -->
+  <main>
+    <section class="hero">
+      <h1>NorthSideRP</h1>
+      <p>Csatlakozz Magyarország egyik legizgalmasabb MTA roleplay szerveréhez és építsd fel karaktered történetét!</p>
+      <a href="../ucp/index.php" class="cta-btn">Regisztrálj most</a>
+    </section>
+    <section class="features">
+      <div class="feature-card">
+        <span class="material-icons">update</span>
+        <h3>Folyamatos frissítések</h3>
+        <p>Fejlesztőink nap mint nap azon dolgoznak, hogy új tartalmakat és javításokat hozzanak a közösség számára.</p>
+      </div>
+      <div class="feature-card">
+        <span class="material-icons">support_agent</span>
+        <h3>Segítőkész adminok</h3>
+        <p>Tapasztalt adminisztrátoraink szinte mindig elérhetők, hogy segítsenek bármilyen probléma esetén.</p>
+      </div>
+      <div class="feature-card">
+        <span class="material-icons">code</span>
+        <h3>Egyedi modok</h3>
+        <p>Több száz egyedi modell és rendszer gondoskodik arról, hogy a játékmenet különleges és izgalmas legyen.</p>
+      </div>
+      <div class="feature-card">
+        <span class="material-icons">work_outline</span>
+        <h3>Változatos munkák</h3>
+        <p>Rengeteg munka közül választhatsz, a búvárkodástól kezdve a pizzafutáron át a szemétszállítóig.</p>
+      </div>
+    </section>
+  </main>
+  <!-- Lábjegyzet -->
+  <footer>
+    &copy; 2025 NorthSideRP – Minden jog fenntartva.
+  </footer>
+</body>
+</html>

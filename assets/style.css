@@ -1,0 +1,348 @@
+/* NorthSideRP Forum Redesign */
+:root {
+  --accent: #2b8ffb;
+  --bg: #0e0e0e;
+  --panel: #161616;
+  --text: #e2e2e2;
+  --muted: #8a8a8a;
+  --border: #1c1c1c;
+  --hover: #1b1b1b;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/*
+ * Navigációs menü
+ * A főoldal fejlécén lévő navigáció fixen rögzített, sötét háttérrel
+ * és kiemelt alsó szegéllyel jelenik meg. Az elemek sorban helyezkednek el,
+ * a logó mellett. Az aktív menüpont aláhúzással és színkiemeléssel jelölődik,
+ * a hover animáció pedig finom színváltást ad.
+ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border-bottom: 2px solid var(--accent);
+  padding: 14px 45px;
+  box-shadow: 0 0 10px rgba(0,0,0,.6);
+}
+
+header .logo-area {
+  display: flex;
+  align-items: center;
+}
+
+header .logo-area img {
+  vertical-align: middle;
+  height: 35px;
+  margin-right: 10px;
+}
+
+header .logo-area .site-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+header nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* === Header === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border-bottom: 2px solid var(--accent);
+  padding: 14px 45px;
+  box-shadow: 0 0 10px rgba(0,0,0,.6);
+}
+
+header img {
+  vertical-align: middle;
+  height: 35px;
+  margin-right: 10px;
+}
+
+header span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+header nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+header nav a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+header nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* === Container === */
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 0 20px rgba(0,0,0,.6);
+  transition: background 0.3s ease;
+}
+.container:hover {
+  background: var(--hover);
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+th {
+  color: var(--accent);
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+tr:hover td {
+  background: rgba(43,143,251,0.08);
+}
+
+/* === Buttons === */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.btn:hover {
+  background: #1a6fd8;
+  transform: translateY(-1px);
+}
+.btn.danger {
+  background: #ff4d4d;
+}
+.btn.danger:hover {
+  background: #d63636;
+}
+
+/* === Landing page sections === */
+/* A hero szakasz a főoldalon található bevezető rész.
+ * Középre igazított, nagy betűkkel és egy kiemelt cselekvésre ösztönző
+ * gombbal rendelkezik. A háttér enyhén sötétebb, hogy a tartalom
+ * elváljon a teljes oldaltól. */
+.hero {
+  max-width: 1100px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,.6);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero .cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.hero .cta-btn:hover {
+  background: #1a6fd8;
+  transform: translateY(-2px);
+}
+
+/* A features szakasz több kártyát tartalmaz, amelyek felsorolják a szerver
+ * legfontosabb előnyeit. A kártyák rugalmas rácsos elrendezésben jelennek meg,
+ * kisebb képernyőkön egymás alá kerülnek. */
+.features {
+  max-width: 1100px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.feature-card:hover {
+  background: var(--hover);
+  transform: translateY(-3px);
+}
+
+.feature-card .material-icons {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* === Badges === */
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+.badge.tulajdonos { background: #2b8ffb; }
+.badge.admin { background: #e13b3b; }
+.badge.moderator { background: #f6891f; }
+.badge.tag { background: #3a3a3a; }
+
+/* === Forms & Inputs === */
+input, select, textarea {
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: var(--text);
+  padding: 8px 10px;
+  width: 100%;
+  margin-bottom: 12px;
+  font-family: inherit;
+  transition: border 0.2s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* === Footer === */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 20px;
+  border-top: 1px solid #1a1a1a;
+  background: #0c0c0c;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.video-hatter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ez küldi a háttérbe */
+    overflow: hidden;
+}
+
+#bg-vid {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(40%); /* Ez sötétíti a videót, hogy a fehér betűid látszódjanak! */
+}

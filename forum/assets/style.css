@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- NORTHSIDERP - XENFORO 1:1 STÍLUS --- */
+:root {
+    /* ÉLÉNK KÉK SZÍNEK (#2b8ffb) */
+    --primary-color: #2b8ffb;   
+    --primary-hover: #1a7ae6;   
+    --secondary-color: #3b82f6; 
+    
+    /* XenForo Sötét Hátterek */
+    --bg-page: #0f0f0f;         
+    --bg-block: #181818;        
+    --bg-block-alt: #1e1e1e;    
+    --bg-header: #121212;       
+    --border-color: #2b2b2b;    
+
+    /* Szöveg Színek */
+    --text-normal: #b4b4b4;
+    --text-light: #dfdfdf;
+    --text-muted: #8f8f8f;
+}
+
+body { 
+    background: var(--bg-page); 
+    color: var(--text-normal); 
+    font-family: 'Inter', BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; 
+    font-size: 15px; 
+    line-height: 1.4; 
+    margin: 0; padding: 0; 
+}
+a { color: var(--text-light); text-decoration: none; transition: 0.2s ease; }
+a:hover { color: var(--primary-color); text-decoration: underline; }
+
+/* --- HEADER NAVBAR --- */
+.p-nav {
+    background: var(--bg-header);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 55px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    position: sticky; top: 0; z-index: 100;
+}
+.p-nav-logo { font-size: 20px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+.p-nav-logo span { color: var(--primary-color); }
+.p-nav-opposite { display: flex; align-items: center; height: 100%; }
+
+/* Felső XenForo ikonok (Keresés, PM, Értesítés) */
+.p-navgroup-link { 
+    color: #fff; padding: 0 15px; display: flex; align-items: center; gap: 8px; font-weight: 600; 
+    border-left: 1px solid var(--border-color); height: 100%; transition: 0.2s;
+}
+.p-navgroup-link i { font-size: 18px; color: var(--text-normal); transition: 0.2s; }
+.p-navgroup-link:hover { background: rgba(255,255,255,0.03); }
+.p-navgroup-link:hover i { color: var(--primary-color); text-decoration: none; }
+.icon-only { padding: 0 18px; }
+.avatar-menu { width: 24px; height: 24px; border-radius: 4px; }
+
+/* Másodlagos navigáció a fő menü alatt */
+.p-nav-sub {
+    background: #0a0a0a;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 40px;
+    display: flex; align-items: center; height: 45px;
+}
+.p-nav-sub a { color: var(--text-light); font-size: 13px; margin-right: 25px; font-weight: 500; }
+.p-nav-sub a:hover { color: var(--primary-color); text-decoration: none; }
+
+/* --- PAGE WRAPPER & LAYOUT --- */
+.p-body { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; gap: 20px; align-items: flex-start; min-height: 70vh;}
+.p-body-main { flex: 1; min-width: 0; }
+.p-body-sidebar { width: 260px; flex-shrink: 0; }
+
+/* Útvonal (Breadcrumb) */
+.p-breadcrumbs {
+    margin-bottom: 15px; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 10px;
+}
+.p-breadcrumbs a { color: var(--text-normal); }
+.p-breadcrumbs a:hover { color: var(--primary-color); text-decoration: none; }
+.p-breadcrumbs i { font-size: 11px; }
+
+/* --- BLOCKS (Kategória Dobozok) --- */
+.block-container {
+    background: var(--bg-block);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.block-header {
+    background: linear-gradient(0deg, #141414 0%, #202020 100%);
+    padding: 12px 15px;
+    color: var(--primary-color);
+    font-size: 15px; font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+/* --- XENFORO NODE ELRENDEZÉS (Főoldal kategóriái) --- */
+.node-body {
+    display: flex; padding: 18px 15px; border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s; align-items: center;
+}
+.node-body:last-child { border-bottom: none; }
+.node-body:hover { background: var(--bg-block-alt); }
+
+/* 1. Ikon */
+.node-icon { width: 44px; text-align: center; margin-right: 15px; opacity: 0.85; }
+.node-icon i { color: var(--primary-color) !important; text-shadow: 0 0 10px rgba(43, 143, 251, 0.2); font-size: 34px; }
+.node-body:hover .node-icon { opacity: 1; }
+
+/* 2. Cím és Leírás */
+.node-main { flex: 1; min-width: 0; padding-right: 10px; }
+.node-title { font-size: 16px; font-weight: 700; color: var(--text-light); margin: 0 0 2px 0; letter-spacing: 0.3px;}
+.node-description { font-size: 12px; color: var(--text-muted); }
+
+/* 3. Statisztika (Témák, Üzenetek) */
+.node-stats { width: 140px; font-size: 12px; color: var(--text-muted); }
+.node-stats dl { display: flex; justify-content: space-between; margin: 0 0 2px 0; }
+.node-stats dt { color: var(--text-muted); }
+.node-stats dd { color: var(--text-light); font-weight: 600; margin: 0; }
+
+/* 4. Legutóbbi Poszt */
+.node-extra { width: 280px; display: flex; align-items: center; padding-left: 15px; border-left: 1px solid var(--border-color); font-size: 12px; }
+.node-extra-icon { width: 36px; height: 36px; border-radius: 2px; margin-right: 10px; object-fit: cover; }
+.node-extra-row { flex: 1; min-width: 0; }
+.node-extra-title { display: block; font-weight: 600; color: var(--text-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.node-extra-date { color: var(--text-muted); }
+.node-extra-user { color: var(--primary-color); font-weight: 600; }
+
+/* --- SIDEBAR WIDGETS --- */
+.block-minorHeader {
+    padding: 10px 15px; font-size: 13px; font-weight: 600; color: var(--text-light);
+    background: linear-gradient(0deg, #121212 0%, #1a1a1a 100%);
+    border-bottom: 1px solid var(--border-color); margin: 0;
+    border-top-left-radius: 4px; border-top-right-radius: 4px;
+}
+.block-body { padding: 15px; font-size: 13px; }
+
+.pairs { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.pairs:last-child { margin-bottom: 0; }
+.pairs dt { color: var(--text-muted); }
+.pairs dd { color: var(--text-light); font-weight: 600; margin: 0; }
+
+.shareButtons { display: flex; gap: 8px; font-size: 24px; }
+.shareButtons i { transition: 0.2s; cursor: pointer; }
+.shareButtons .fa-facebook { color: #3b5998; }
+.shareButtons .fa-twitter { color: #1da1f2; }
+.shareButtons .fa-discord { color: #5865F2; }
+.shareButtons i:hover { filter: brightness(1.2); }
+
+/* Gombok */
+.button {
+    background: var(--primary-color); color: #fff; padding: 8px 15px; border: none; border-radius: 4px; font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; display: inline-block; transition: 0.2s;
+}
+.button:hover { background: var(--primary-hover); text-decoration: none; }
+
+/* --- POSZTOK NÉZET (XENFORO 1:1 REPLIKA - POLÍROZOTT) --- */
+.message { 
+    background: var(--bg-block); 
+    border: 1px solid var(--border-color); 
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    display: flex; 
+}
+
+/* Bal oldali sáv */
+.message-user { 
+    width: 150px; 
+    background: #111111; 
+    padding: 15px; 
+    border-right: 1px solid var(--border-color); 
+    flex-shrink: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+.message-avatar-wrapper { position: relative; margin-bottom: 10px; }
+.message-avatar { width: 96px; height: 96px; border-radius: 2px; object-fit: cover; border: 1px solid var(--border-color); }
+.message-online-dot { position: absolute; bottom: -4px; right: -4px; width: 14px; height: 14px; background: #51a351; border: 2px solid #111; border-radius: 50%; }
+
+.message-username { font-weight: 700; font-size: 14px; text-align: center; margin-bottom: 5px; word-wrap: break-word; width: 100%; text-shadow: 0 0 3px rgba(0,0,0,0.8); }
+.message-userTitle { font-size: 11px; color: #fff; padding: 4px 6px; border-radius: 3px; font-weight: 600; text-align: center; margin-bottom: 15px; width: 100%; box-sizing: border-box; }
+
+/* Statisztikák SZAGGATOTT VONALLAL */
+.message-userExtras { font-size: 11px; color: var(--text-muted); width: 100%; }
+.message-userExtras dl { display: flex; justify-content: space-between; margin: 0; padding: 4px 0; border-bottom: 1px dashed #2b2b2b; }
+.message-userExtras dl:last-child { border-bottom: none; }
+.message-userExtras dt { color: var(--text-muted); }
+.message-userExtras dd { color: var(--text-light); font-weight: 600; margin: 0; }
+
+/* Jobb oldal: Maga a tartalom és a KIS NYÍL */
+.message-content { flex: 1; display: flex; flex-direction: column; min-width: 0; background: var(--bg-block); position: relative; }
+
+/* A Híres XenForo Nyíl */
+.message-content::before {
+    content: ""; position: absolute; top: 25px; left: -10px;
+    border-width: 10px 10px 10px 0; border-style: solid;
+    border-color: transparent var(--border-color) transparent transparent;
+}
+.message-content::after {
+    content: ""; position: absolute; top: 25px; left: -9px;
+    border-width: 10px 10px 10px 0; border-style: solid;
+    border-color: transparent var(--bg-block) transparent transparent;
+}
+
+.message-header { padding: 8px 15px; border-bottom: 1px solid var(--border-color); font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between; }
+.message-header a { color: var(--text-muted); }
+.message-body { padding: 15px; font-size: 14px; color: var(--text-light); flex: 1; line-height: 1.6; }
+.message-signature { margin-top: 30px; padding-top: 15px; border-top: 1px solid var(--border-color); font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+.message-footer { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.actionBar-left a, .actionBar-right a { color: var(--text-muted); font-size: 12px; font-weight: 500; margin-left: 15px; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.actionBar-left a { margin-left: 0; margin-right: 15px; }
+.actionBar-left a:hover, .actionBar-right a:hover { color: var(--primary-color); text-decoration: none; }
+
+/* Címke (Prefix) */
+.prefix-badge { background: var(--secondary-color); color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 12px; font-weight: 600; margin-right: 8px; vertical-align: middle; text-transform: uppercase; }
+
+/* Téma Meta (Fejléc alatti infó) */
+.p-description { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.p-description img { width: 24px; height: 24px; border-radius: 2px; object-fit: cover; }
+.p-description a { color: var(--text-light); font-weight: bold; }
+.p-description a:hover { color: var(--primary-color); }
+
+/* Gyors Válasz Doboz (Alul) */
+.quickReply { background: var(--bg-block); border: 1px solid var(--border-color); border-radius: 4px; padding: 15px; display: flex; gap: 15px; margin-top: 20px;}
+.quickReply-avatar { width: 48px; height: 48px; border-radius: 2px; flex-shrink: 0; object-fit: cover; }
+.quickReply-editor { flex: 1; }
+.quickReply textarea { width: 100%; min-height: 120px; background: #0a0a0a; border: 1px solid var(--border-color); color: var(--text-normal); padding: 12px; border-radius: 4px; resize: vertical; font-family: inherit; margin-bottom: 10px; font-size: 14px;}
+.quickReply textarea:focus { border-color: var(--primary-color); outline: none; }
+
+/* --- LÁBLÉC (FOOTER XENFORO STÍLUS) --- */
+.p-footer {
+    background: var(--bg-header);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 40px;
+    font-size: 13px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.p-footer-inner {
+    max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%;
+}
+.p-footer-row a { color: var(--text-normal); margin-right: 15px; display: inline-flex; align-items: center; gap: 6px; }
+.p-footer-row a:hover { color: var(--primary-color); }
+.p-footer-rowLinks a { margin-left: 15px; color: var(--text-normal); }
+.p-footer-rowLinks a:hover { color: var(--primary-color); }
+.p-footer-copyright { text-align: center; font-size: 11px; color: var(--text-muted); margin-bottom: 20px; }
+
+/* Értesítés számláló badge a menüben */
+.badge-alert { background: #e74c3c; color: #fff; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 4px; position: absolute; top: 10px; right: 8px; box-shadow: 0 0 5px rgba(231,76,60,0.5); }
+.p-navgroup-link { position: relative; } /* Hogy a badge a helyén maradjon */
+
+/* --- XENFORO BBCODE STÍLUSOK (Idézet, Code, Spoiler) --- */
+
+/* Idézet (Quote) doboz */
+.bbCodeBlock-quote {
+    background: #161a1f;
+    border-left: 3px solid var(--primary-color);
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.quote-header {
+    background: #111418;
+    padding: 8px 15px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+}
+.quote-content {
+    padding: 12px 15px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* Kód (Code) doboz */
+.bbCodeBlock-code {
+    background: #0d1117;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid #e3b341;
+    margin: 15px 0;
+    border-radius: 4px;
+    overflow-x: auto;
+    padding: 12px 15px;
+}
+.bbCodeBlock-code code {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 13px;
+    color: #e6edf3;
+}
+
+/* Spoiler (Lenyíló) doboz */
+.bbCodeBlock-spoiler {
+    margin: 15px 0;
+}
+.spoiler-button {
+    background: #1c2128;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 8px 15px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.spoiler-button:hover { background: #22272e; }
+.spoiler-button span { color: var(--text-muted); font-weight: bold; }
+.spoiler-content {
+    background: var(--bg-block);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    padding: 15px;
+    border-radius: 0 0 4px 4px;
+    display: none; /* Alapból elrejtve */
+    font-size: 13px;
+}
+.spoiler-content.show {
+    display: block; /* Amikor rákattintanak, megjelenik */
+}
